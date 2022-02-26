@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spinner</title>
+        <style>
+                body{
+                        width: 100%;
+                        height: 100vh;
+                        display: grid;
+                        place-items: center;
+                        background-image: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%,
+                        #4801ff 100%);
+                        overflow: hidden;
+                }
+                .spinner{
+                        width: 300px;
+                        height: 300px;
+                        position: relative;
+                        border-radius: 30px;
+                        background-color: #fff;
+                        display: grid;
+                        place-items: center;
+                }
+                h1{
+                        font-family: sans-serif;
+                        color: #7918f2;
+                }
+                .dot{
+                        position: absolute;
+                        inset: 0;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: center;
+                }
+                .dot::after{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 20px;
+                        background-image: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%,
+                        #4801ff 100%);
+                }
+
+                .dot{
+                        animation: spin 2s infinite;
+                }
+                .dot:nth-child(2){
+                        animation-delay: 100ms;
+                }
+                .dot:nth-child(3){
+                        animation-delay: 200ms;
+                }                .dot:nth-child(4){
+                        animation-delay: 300ms;
+                }                .dot:nth-child(5){
+                        animation-delay: 400ms;
+                }
+
+                @keyframes spin{
+                        to{
+                                transform: rotate(360deg);
+                        }
+                }
+        </style>
+</head>
+<body>
+        <div class="spinner">
+                <h1>Loading</h1>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+        </div>
+</body>
+</html>
